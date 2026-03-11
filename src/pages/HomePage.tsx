@@ -75,7 +75,7 @@ export default function HomePage() {
               className="text-primary-foreground/80 text-lg md:text-xl max-w-xl leading-relaxed mb-8 animate-fade-up"
               style={{ animationDelay: "0.35s", opacity: 0 }}
             >
-              Master GCC Saudi Arabia delivers world-class MEP, ELV, Automation, and Facility Management solutions — built on 12+ years of GCC excellence.
+              Master Qatar W.L.L. delivers world-class MEP, ELV, Automation, and Facility Management solutions — built on 12+ years of GCC excellence.
             </p>
 
             <div
