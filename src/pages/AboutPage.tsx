@@ -17,7 +17,7 @@ const milestones = [
   { year: "2018", event: "ISO 45001 occupational health & safety certification" },
   { year: "2020", event: "Approved by Supreme Committee for FIFA Stadiums" },
   { year: "2022", event: "FIFA World Cup Qatar 2022 projects completed" },
-  { year: "2024", event: "Master GCC Saudi Arabia launched in Jeddah" },
+  { year: "2024", event: "Master Qatar W.L.L. — Saudi Arabia Branch launched in Jeddah" },
 ];
 
 export default function AboutPage() {
