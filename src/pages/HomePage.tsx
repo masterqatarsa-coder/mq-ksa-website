@@ -126,7 +126,7 @@ export default function HomePage() {
               <SectionHeading
                 label="Who We Are"
                 title="Engineering Excellence Across the GCC Region"
-                subtitle="Master GCC Saudi Arabia is the latest expansion of Qatar Masters — a leading construction and engineering company established in 2011. We bring over a decade of proven expertise to serve the rapidly growing Saudi Arabian market."
+                subtitle="Master Qatar W.L.L. is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. We bring over a decade of proven expertise to serve the rapidly growing Saudi Arabian market."
               />
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {strengths.map((s) => (
