@@ -185,6 +185,26 @@ const services = [
 
 export default function ServicesPage() {
   const [expandedSub, setExpandedSub] = useState<Record<string, boolean>>({});
+  const location = useLocation();
+
+  // Scroll to section when navigating via hash
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      // Small delay to let page render
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const offset = 90;
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.hash]);
+
 
   const toggle = (key: string) =>
     setExpandedSub((prev) => ({ ...prev, [key]: !prev[key] }));
