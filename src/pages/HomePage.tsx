@@ -259,7 +259,7 @@ export default function HomePage() {
             Ready to Start Your Next Project?
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
-            Partner with Master GCC Saudi Arabia — where engineering meets innovation.
+            Partner with Master Qatar W.L.L. — where engineering meets innovation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

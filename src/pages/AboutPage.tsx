@@ -35,7 +35,7 @@ export default function AboutPage() {
             <SectionHeading
               label="Our Story"
               title="From Qatar to the Kingdom of Saudi Arabia"
-              subtitle="Master GCC Saudi Arabia is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. Since 2011, we have partnered with over 20 multinational companies on some of the most prestigious construction projects in Qatar, including FIFA World Cup stadiums, international airports, and landmark infrastructure."
+              subtitle="Master Qatar W.L.L. is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. Since 2011, we have partnered with over 20 multinational companies on some of the most prestigious construction projects in Qatar, including FIFA World Cup stadiums, international airports, and landmark infrastructure."
               center
             />
             <p className="text-muted-foreground leading-relaxed mt-4">

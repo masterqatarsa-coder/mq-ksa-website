@@ -215,7 +215,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Master GCC Saudi Arabia Location"
+          title="Master Qatar W.L.L. — Saudi Arabia Location"
         />
       </section>
     </div>
