@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { PageHero, SectionHeading } from "@/components/UIComponents";
 import { Zap, Wifi, Settings, Wrench, Users, Package, ChevronDown } from "lucide-react";
 import mepImg from "@/assets/service-mep.jpg";
