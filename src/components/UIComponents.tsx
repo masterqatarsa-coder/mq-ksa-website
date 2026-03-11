@@ -98,7 +98,7 @@ export function PageHero({ title, subtitle, bg }: PageHeroProps) {
       <div className="absolute inset-0 bg-gradient-hero opacity-90" />
       <div className="absolute inset-0 pattern-dots opacity-20" />
       <div className="container mx-auto px-4 relative z-10">
-        <p className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Master GCC Saudi Arabia</p>
+        <p className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Master Qatar W.L.L. — Saudi Arabia</p>
         <h1 className="font-condensed font-extrabold text-4xl md:text-6xl text-primary-foreground">
           {title}
         </h1>

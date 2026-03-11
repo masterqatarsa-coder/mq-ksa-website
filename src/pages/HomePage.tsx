@@ -75,7 +75,7 @@ export default function HomePage() {
               className="text-primary-foreground/80 text-lg md:text-xl max-w-xl leading-relaxed mb-8 animate-fade-up"
               style={{ animationDelay: "0.35s", opacity: 0 }}
             >
-              Master GCC Saudi Arabia delivers world-class MEP, ELV, Automation, and Facility Management solutions — built on 12+ years of GCC excellence.
+              Master Qatar W.L.L. delivers world-class MEP, ELV, Automation, and Facility Management solutions — built on 12+ years of GCC excellence.
             </p>
 
             <div
@@ -126,7 +126,7 @@ export default function HomePage() {
               <SectionHeading
                 label="Who We Are"
                 title="Engineering Excellence Across the GCC Region"
-                subtitle="Master GCC Saudi Arabia is the latest expansion of Qatar Masters — a leading construction and engineering company established in 2011. We bring over a decade of proven expertise to serve the rapidly growing Saudi Arabian market."
+                subtitle="Master Qatar W.L.L. is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. We bring over a decade of proven expertise to serve the rapidly growing Saudi Arabian market."
               />
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {strengths.map((s) => (
@@ -259,7 +259,7 @@ export default function HomePage() {
             Ready to Start Your Next Project?
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
-            Partner with Master GCC Saudi Arabia — where engineering meets innovation.
+            Partner with Master Qatar W.L.L. — where engineering meets innovation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

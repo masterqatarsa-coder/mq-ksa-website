@@ -97,7 +97,7 @@ export default function ContactPage() {
                       Message Sent!
                     </h3>
                     <p className="text-muted-foreground max-w-sm">
-                      Thank you for contacting Master GCC Saudi Arabia. Our team will get back to you within 24 hours.
+                      Thank you for contacting Master Qatar W.L.L. Our team will get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setForm({ name: "", email: "", phone: "", service: "", message: "" }); }}
@@ -215,7 +215,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Master GCC Saudi Arabia Location"
+          title="Master Qatar W.L.L. — Saudi Arabia Location"
         />
       </section>
     </div>

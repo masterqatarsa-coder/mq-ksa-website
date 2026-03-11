@@ -17,7 +17,7 @@ const milestones = [
   { year: "2018", event: "ISO 45001 occupational health & safety certification" },
   { year: "2020", event: "Approved by Supreme Committee for FIFA Stadiums" },
   { year: "2022", event: "FIFA World Cup Qatar 2022 projects completed" },
-  { year: "2024", event: "Master GCC Saudi Arabia launched in Jeddah" },
+  { year: "2024", event: "Master Qatar W.L.L. — Saudi Arabia Branch launched in Jeddah" },
 ];
 
 export default function AboutPage() {
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <SectionHeading
               label="Our Story"
               title="From Qatar to the Kingdom of Saudi Arabia"
-              subtitle="Master GCC Saudi Arabia is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. Since 2011, we have partnered with over 20 multinational companies on some of the most prestigious construction projects in Qatar, including FIFA World Cup stadiums, international airports, and landmark infrastructure."
+              subtitle="Master Qatar W.L.L. is the proud expansion of Qatar Masters — one of the most trusted engineering and MEP contracting companies in the GCC region. Since 2011, we have partnered with over 20 multinational companies on some of the most prestigious construction projects in Qatar, including FIFA World Cup stadiums, international airports, and landmark infrastructure."
               center
             />
             <p className="text-muted-foreground leading-relaxed mt-4">
