@@ -57,12 +57,12 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                 </span>
               </a>
               <a
-                href="mailto:info@masterqatar.com"
+                href="mailto:mail@qatarmaster.com"
                 className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
               >
                 <Mail className="h-4 w-4 text-accent" />
                 <span>
-                  info@masterqatar.com
+                  mail@qatarmaster.com
                   <span className="block text-xs text-muted-foreground">Email us</span>
                 </span>
               </a>
@@ -118,17 +118,10 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                     lines: [
                       <a
                         key="email"
-                        href="mailto:info@masterqatar.com"
+                        href="mailto:mail@qatarmaster.com"
                         className="text-sm text-foreground font-semibold hover:text-primary"
                       >
-                        info@masterqatar.com
-                      </a>,
-                      <a
-                        key="email2"
-                        href="mailto:sales@mastergcc.com"
-                        className="text-sm text-foreground font-semibold hover:text-primary"
-                      >
-                        sales@mastergcc.com
+                        mail@qatarmaster.com
                       </a>,
                     ],
                   },

@@ -74,7 +74,7 @@ export default function CareersPage({ embedded = false }: CareersPageProps) {
                   {
                     icon: Mail,
                     title: "Email",
-                    lines: ["info@masterqatar.com"],
+                    lines: ["mail@qatarmaster.com"],
                   },
                   {
                     icon: Clock,

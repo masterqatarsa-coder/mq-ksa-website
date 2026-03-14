@@ -196,8 +196,8 @@ export function Navbar() {
               <a href="tel:+966000000000" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
                 <Phone size={12} /> +966 00 000 0000
               </a>
-              <a href="mailto:info@masterqatar.com" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
-                <Mail size={12} /> info@masterqatar.com
+              <a href="mailto:mail@qatarmaster.com" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
+                <Mail size={12} /> mail@qatarmaster.com
               </a>
             </div>
           </div>
@@ -436,9 +436,9 @@ export function Navbar() {
                   <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Phone</span>
                   +966 00 000 0000
                 </a>
-                <a href="mailto:info@masterqatar.com" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
+                <a href="mailto:mail@qatarmaster.com" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
                   <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Email</span>
-                  info@masterqatar.com
+                  mail@qatarmaster.com
                 </a>
               </div>
 

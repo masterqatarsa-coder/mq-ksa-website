@@ -143,11 +143,11 @@ export default function Footer() {
                   </div>
                   +966 00 000 0000
                 </a>
-                <a href="mailto:info@masterqatar.com" className="flex items-center gap-3 transition-colors hover:text-gold">
+                <a href="mailto:mail@qatarmaster.com" className="flex items-center gap-3 transition-colors hover:text-gold">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
                     <Mail size={15} />
                   </div>
-                  info@masterqatar.com
+                  mail@qatarmaster.com
                 </a>
               </div>
 
