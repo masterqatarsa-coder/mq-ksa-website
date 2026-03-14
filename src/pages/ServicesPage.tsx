@@ -183,12 +183,20 @@ const services = [
   },
 ];
 
-export default function ServicesPage() {
+interface ServicesPageProps {
+  embedded?: boolean;
+}
+
+export default function ServicesPage({ embedded = false }: ServicesPageProps) {
   const [expandedSub, setExpandedSub] = useState<Record<string, boolean>>({});
   const location = useLocation();
 
   // Scroll to section when navigating via hash
   useEffect(() => {
+    if (embedded) {
+      return;
+    }
+
     if (location.hash) {
       const id = location.hash.replace("#", "");
       // Small delay to let page render
@@ -203,18 +211,20 @@ export default function ServicesPage() {
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location.hash]);
+  }, [embedded, location.hash]);
 
 
   const toggle = (key: string) =>
     setExpandedSub((prev) => ({ ...prev, [key]: !prev[key] }));
 
   return (
-    <div>
-      <PageHero
+    <div>
+      {!embedded && (
+        <PageHero
         title="Our Services"
         subtitle="End-to-end engineering & technology solutions for every stage of your project"
       />
+      )}
 
       {/* Services overview */}
       <section className="py-20 bg-background">
@@ -305,3 +315,8 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+
+
+
+

@@ -49,13 +49,19 @@ const awards = [
   },
 ];
 
-export default function CertificationsPage() {
+interface CertificationsPageProps {
+  embedded?: boolean;
+}
+
+export default function CertificationsPage({ embedded = false }: CertificationsPageProps) {
   return (
-    <div>
-      <PageHero
+    <div>
+      {!embedded && (
+        <PageHero
         title="Certifications"
         subtitle="International standards and quality certifications demonstrating our commitment to excellence"
       />
+      )}
 
       {/* ISO Certifications */}
       <section className="py-20 bg-background">
@@ -149,3 +155,5 @@ export default function CertificationsPage() {
     </div>
   );
 }
+
+

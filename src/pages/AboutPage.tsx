@@ -20,13 +20,19 @@ const milestones = [
   { year: "2024", event: "Master Qatar W.L.L. — Saudi Arabia Branch launched in Jeddah" },
 ];
 
-export default function AboutPage() {
+interface AboutPageProps {
+  embedded?: boolean;
+}
+
+export default function AboutPage({ embedded = false }: AboutPageProps) {
   return (
-    <div>
-      <PageHero
+    <div>
+      {!embedded && (
+        <PageHero
         title="About Us"
         subtitle="Building trust through engineering excellence since 2011"
       />
+      )}
 
       {/* Company Overview */}
       <section className="py-20 bg-background">
@@ -134,3 +140,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+

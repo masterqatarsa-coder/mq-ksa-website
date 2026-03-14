@@ -23,6 +23,8 @@ const clients = [
   { name: "Trane", sector: "Climate Control" },
 ];
 
+const clientLogos = Array.from({ length: 59 }, (_, index) => `/client-logo/c${index + 1}.jpg`);
+
 const testimonials = [
   {
     quote: "Qatar Masters has been a reliable partner on multiple major projects. Their quality of work and professionalism is consistently outstanding.",
@@ -41,13 +43,20 @@ const testimonials = [
   },
 ];
 
-export default function ClientsPage() {
+interface ClientsPageProps {
+  embedded?: boolean;
+}
+
+export default function ClientsPage({ embedded = false }: ClientsPageProps) {
   return (
     <div>
-      <PageHero
+
+      {!embedded && (
+        <PageHero
         title="Our Clients"
         subtitle="Trusted by 20+ leading multinational companies across the GCC region"
       />
+      )}
 
       {/* Stats */}
       <section className="py-12 bg-primary">
@@ -78,46 +87,30 @@ export default function ClientsPage() {
             center
           />
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {clients.map((client) => (
+            {clientLogos.map((logo, index) => (
               <div
-                key={client.name}
-                className="group bg-card border border-border rounded-xl p-5 text-center shadow-card hover-lift"
+                key={`logo-${index}`}
+                className="bg-card border border-border rounded-xl p-4 flex items-center justify-center shadow-card hover:shadow-lg transition"
               >
-                <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center mx-auto mb-3">
-                  <span className="font-condensed font-extrabold text-xl text-accent">
-                    {client.name.slice(0, 2).toUpperCase()}
-                  </span>
-                </div>
-                <div className="font-semibold text-sm text-foreground">{client.name}</div>
-                <div className="text-xs text-muted-foreground mt-1">{client.sector}</div>
+                <img
+                  src={logo}
+                  alt={`Client logo ${index + 1}`}
+                  className="max-h-14 max-w-full object-contain"
+                  onError={(event) => {
+                    if (event.currentTarget.src !== "/placeholder.svg") {
+                      event.currentTarget.src = "/placeholder.svg";
+                    }
+                  }}
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            label="What They Say"
-            title="Client Testimonials"
-            center
-          />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-card rounded-xl p-6 shadow-card border border-border">
-                <div className="text-4xl text-accent/30 font-condensed font-black leading-none mb-3">"</div>
-                <p className="text-sm text-muted-foreground leading-relaxed italic mb-5">{t.quote}</p>
-                <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-sm text-foreground">{t.author}</div>
-                  <div className="text-xs text-muted-foreground">{t.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }
+
+

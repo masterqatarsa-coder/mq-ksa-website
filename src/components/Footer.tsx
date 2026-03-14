@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, Instagram, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 const services = [
-  "MEP Contracting",
-  "ELV Systems",
-  "Automation Systems",
-  "Facility Management",
-  "Workforce Solutions",
-  "Trading",
+  { label: "MEP Contracting", href: "/services#mep" },
+  { label: "ELV Systems", href: "/services#elv" },
+  { label: "Automation Systems", href: "/services#automation" },
+  { label: "Facility Management", href: "/services#fm" },
+  { label: "Workforce Solutions", href: "/services#workforce" },
+  { label: "Trading", href: "/services#trading" },
 ];
 
 const quickLinks = [
@@ -19,149 +19,164 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const socials = [
+  { label: "Facebook", icon: Facebook, href: "#" },
+  { label: "LinkedIn", icon: Linkedin, href: "#" },
+  { label: "Twitter", icon: Twitter, href: "#" },
+  { label: "Instagram", icon: Instagram, href: "#" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-primary-foreground/65 relative overflow-hidden">
-      {/* Decorative gradient top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-      <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+    <footer className="relative overflow-hidden bg-navy-950 text-primary-foreground/92">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(26,168,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,200,72,0.12),transparent_30%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,26,0.16),rgba(4,12,26,0.42))]" />
+      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      <div className="absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
-      {/* Main footer content */}
-      <div className="container mx-auto px-4 xl:px-6 pt-16 pb-10 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-
-          {/* Brand column */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="inline-flex items-center gap-3 group mb-5">
-              <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-accent to-secondary flex items-center justify-center shadow-lg">
-                <span className="font-condensed font-black text-2xl text-primary-foreground">M</span>
+      <div className="container relative mx-auto px-4 pb-10 pt-20 xl:px-6">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.65)] backdrop-blur-xl md:p-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                Start your next project
               </div>
-              <div>
-                <div className="font-condensed font-black text-[17px] text-primary-foreground leading-none tracking-wide">
-                  MASTER QATAR
-                </div>
-                <div className="text-gold text-[9px] font-bold tracking-[0.2em] uppercase mt-0.5">
-                  W.L.L. — Saudi Arabia
-                </div>
-              </div>
-            </Link>
-
-            <p className="text-sm leading-relaxed mb-6 text-primary-foreground/55">
-              A trusted engineering & technology partner delivering world-class MEP, ELV, Automation, and Facility Management solutions across the GCC region.
-            </p>
-
-            <div className="flex gap-2">
-              {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-8 h-8 rounded-lg bg-navy-800 hover:bg-accent flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <Icon size={14} />
-                </a>
-              ))}
+              <h2 className="mt-4 font-condensed text-4xl font-black leading-none text-primary-foreground md:text-5xl">
+                Build with an engineering partner that thinks in systems, not silos.
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/88 md:text-base">
+                From infrastructure delivery to facility operations, we help clients move from concept to execution with a sharper, more reliable experience.
+              </p>
             </div>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent to-secondary px-6 py-3.5 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-[0_18px_40px_-18px_rgba(24,164,255,0.8)] transition-all duration-200 hover:-translate-y-0.5"
+            >
+              Discuss Your Project
+              <ArrowRight size={15} />
+            </Link>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-condensed font-bold text-base text-primary-foreground mb-5 uppercase tracking-[0.12em] flex items-center gap-2">
-              <span className="w-5 h-0.5 bg-gold rounded-full" />
-              Services
-            </h4>
-            <ul className="space-y-2.5">
-              {services.map((s) => (
-                <li key={s}>
-                  <Link
-                    to="/services"
-                    className="text-sm hover:text-gold transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-accent/50 group-hover:bg-gold transition-colors shrink-0" />
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="my-8 h-px bg-gradient-to-r from-transparent via-white/14 to-transparent" />
 
-          {/* Quick links */}
-          <div>
-            <h4 className="font-condensed font-bold text-base text-primary-foreground mb-5 uppercase tracking-[0.12em] flex items-center gap-2">
-              <span className="w-5 h-0.5 bg-gold rounded-full" />
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    to={l.href}
-                    className="text-sm hover:text-gold transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-accent/50 group-hover:bg-gold transition-colors shrink-0" />
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-condensed font-bold text-base text-primary-foreground mb-5 uppercase tracking-[0.12em] flex items-center gap-2">
-              <span className="w-5 h-0.5 bg-gold rounded-full" />
-              Contact
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-md bg-navy-800 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin size={13} className="text-gold" />
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
+            <div>
+              <Link to="/" className="inline-flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent via-secondary to-primary shadow-[0_10px_28px_-12px_rgba(26,168,255,0.62)]">
+                  <span className="font-condensed text-2xl font-black text-primary-foreground">M</span>
                 </div>
-                <span className="text-sm leading-relaxed">Jeddah, Kingdom of Saudi Arabia</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded-md bg-navy-800 flex items-center justify-center shrink-0">
-                  <Phone size={13} className="text-gold" />
+                <div>
+                  <div className="font-condensed text-[18px] font-black leading-none tracking-[0.08em] text-primary-foreground">
+                    MASTER QATAR
+                  </div>
+                  <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold/86">
+                    Saudi Arabia Branch
+                  </div>
                 </div>
-                <a href="tel:+966000000000" className="text-sm hover:text-gold transition-colors">
+              </Link>
+
+              <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/88">
+                A trusted GCC engineering partner delivering MEP, ELV, automation, facility management, workforce, and trading solutions through one coordinated team.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {socials.map(({ label, icon: Icon, href }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/8 text-primary-foreground/92 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-white/12 hover:text-gold"
+                  >
+                    <Icon size={15} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/76">Services</h3>
+              <div className="mt-5 space-y-3">
+                {services.map((service) => (
+                  <Link
+                    key={service.label}
+                    to={service.href}
+                    className="group flex items-center gap-3 text-sm text-primary-foreground/88 transition-colors hover:text-gold"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent/80 transition-colors group-hover:bg-gold" />
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/76">Explore</h3>
+              <div className="mt-5 space-y-3">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="group flex items-center gap-3 text-sm text-primary-foreground/88 transition-colors hover:text-gold"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent/80 transition-colors group-hover:bg-gold" />
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5">
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/76">Contact</h3>
+              <div className="mt-5 space-y-4 text-sm text-primary-foreground/92">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
+                    <MapPin size={15} />
+                  </div>
+                  <span>Jeddah, Kingdom of Saudi Arabia</span>
+                </div>
+                <a href="tel:+966000000000" className="flex items-center gap-3 transition-colors hover:text-gold">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
+                    <Phone size={15} />
+                  </div>
                   +966 00 000 0000
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded-md bg-navy-800 flex items-center justify-center shrink-0">
-                  <Mail size={13} className="text-gold" />
-                </div>
-                <a href="mailto:info@masterqatar.com" className="text-sm hover:text-gold transition-colors">
+                <a href="mailto:info@masterqatar.com" className="flex items-center gap-3 transition-colors hover:text-gold">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
+                    <Mail size={15} />
+                  </div>
                   info@masterqatar.com
                 </a>
-              </li>
-            </ul>
-
-            <div className="mt-5 pt-4 border-t border-navy-800/80">
-              <p className="text-[10px] text-primary-foreground/35 uppercase tracking-widest mb-1.5">Sister Company</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-primary-foreground/65">Master Qatar W.L.L.</p>
-                  <p className="text-xs text-primary-foreground/35">Doha, Qatar | Est. 2011</p>
-                </div>
-                <ArrowUpRight size={14} className="text-accent/50" />
               </div>
+
+              <a
+                href="http://www.qatarmaster.com.qa/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 block rounded-[1.3rem] border border-white/10 bg-white/10 p-4 transition hover:bg-white/20"
+              >
+                <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary-foreground/72">Sister company</div>
+                <div className="mt-2 font-condensed text-xl font-bold text-primary-foreground">Qatar Masters</div>
+                <div className="mt-1 text-sm text-primary-foreground/82">Doha, Qatar | Established 2011</div>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="mt-12 pt-6 border-t border-navy-800/60 flex flex-col md:flex-row justify-between items-center gap-3">
-          <span className="text-xs text-primary-foreground/35">
-            © 2025 Master Qatar W.L.L. — Saudi Arabia Branch. All rights reserved.
-          </span>
-          <span className="flex gap-5 text-xs text-primary-foreground/35">
-            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-gold transition-colors">Sitemap</a>
-          </span>
+        <div className="mt-6 flex flex-col gap-3 text-xs text-primary-foreground/72 md:flex-row md:items-center md:justify-between">
+          <span>Copyright 2025 Master Qatar W.L.L. - Saudi Arabia Branch. All rights reserved.</span>
+          <div className="flex gap-5">
+            <a href="#" className="transition-colors hover:text-gold">Privacy Policy</a>
+            <a href="#" className="transition-colors hover:text-gold">Terms of Service</a>
+            <a href="#" className="transition-colors hover:text-gold">Sitemap</a>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
+
+

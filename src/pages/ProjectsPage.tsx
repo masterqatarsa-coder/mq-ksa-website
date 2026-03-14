@@ -68,13 +68,19 @@ const industries = [
   { title: "Commercial Buildings", img: commercialImg, desc: "Corporate towers, retail, and mixed-use developments across the GCC." },
 ];
 
-export default function ProjectsPage() {
+interface ProjectsPageProps {
+  embedded?: boolean;
+}
+
+export default function ProjectsPage({ embedded = false }: ProjectsPageProps) {
   return (
-    <div>
-      <PageHero
+    <div>
+      {!embedded && (
+        <PageHero
         title="Our Projects"
         subtitle="A track record of excellence across landmark projects in the GCC region"
       />
+      )}
 
       {/* Industries */}
       <section className="py-20 bg-background">
@@ -167,3 +173,5 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
+
