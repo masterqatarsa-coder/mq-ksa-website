@@ -23,7 +23,7 @@ const clients = [
   { name: "Trane", sector: "Climate Control" },
 ];
 
-const clientLogos = Array.from({ length: 59 }, (_, index) => `/client-logo/c${index + 1}.jpg`);
+const clientLogos = Array.from({ length: 59 }, (_, index) => new URL(`../assets/c${index + 1}.jpg`, import.meta.url).href);
 
 const testimonials = [
   {

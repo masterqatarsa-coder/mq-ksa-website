@@ -107,7 +107,7 @@ const partnerTicker = [
   "ASSA ABLOY",
 ];
 
-const clientLogos = Array.from({ length: 59 }, (_, i) => `/client-logo/c${i + 1}.jpg`);
+const clientLogos = Array.from({ length: 59 }, (_, i) => new URL(`../assets/c${i + 1}.jpg`, import.meta.url).href);
 
 const deliverySteps = [
   {
