@@ -270,6 +270,14 @@
     transform: translateX(18%);
   }
 
+  .glass-panel {
+    border: 1px solid rgba(255,255,255,0.22);
+    background: linear-gradient(145deg, rgba(8, 14, 30, 0.58), rgba(21, 33, 55, 0.33));
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+    box-shadow: 0 32px 70px rgba(3, 10, 24, 0.28);
+  }
+
   .metric-pill {
     box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(18px);

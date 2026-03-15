@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import mqLogo from "../assets/MQ-LOGO.png";
 
 const services = [
   { label: "MEP Contracting", href: "/services#mep" },
@@ -35,8 +36,8 @@ export default function Footer() {
       <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
       <div className="absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="container relative mx-auto px-4 pb-10 pt-20 xl:px-6">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.65)] backdrop-blur-xl md:p-10">
+      <div className="container relative mx-auto px-4 pb-5 pt-10 xl:px-6">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.65)] backdrop-blur-xl md:p-7">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
@@ -62,18 +63,28 @@ export default function Footer() {
 
           <div className="my-8 h-px bg-gradient-to-r from-transparent via-white/14 to-transparent" />
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-4">
             <div>
-              <Link to="/" className="inline-flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent via-secondary to-primary shadow-[0_10px_28px_-12px_rgba(26,168,255,0.62)]">
-                  <span className="font-condensed text-2xl font-black text-primary-foreground">M</span>
-                </div>
+              <Link to="/" className="inline-flex items-center gap-3 rounded-3xl bg-white p-3 transition hover:bg-gray-50">
+                <img src={mqLogo} alt="MQ logo" className="h-12 w-19 object-cover rounded-lg" />
                 <div>
-                  <div className="font-condensed text-[18px] font-black leading-none tracking-[0.08em] text-primary-foreground">
+                  <div className="font-condensed text-[18px] font-black leading-none tracking-[0.08em] text-slate-900">
                     MASTER QATAR
                   </div>
-                  <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold/86">
-                    Saudi Arabia Branch
+                  <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
+                    Kingdom of Saudi Arabia
+                  </div>
+                </div>
+              </Link>
+
+              <Link to="/" className="inline-flex items-center gap-3 rounded-3xl bg-white p-3 transition hover:bg-gray-50 mt-4">
+                <img src={mqLogo} alt="MQ logo" className="h-12 w-19 object-cover rounded-lg" />
+                <div>
+                  <div className="font-condensed text-[18px] font-black leading-none tracking-[0.08em] text-slate-900">
+                    QM Arabia
+                  </div>
+                  <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
+                    Kingdom of Saudi Arabia
                   </div>
                 </div>
               </Link>
@@ -165,7 +176,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 text-xs text-primary-foreground/72 md:flex-row md:items-center md:justify-between">
+        <div className="mt-4 flex flex-col gap-3 text-xs text-primary-foreground/72 md:flex-row md:items-center md:justify-between">
           <span>Copyright 2025 Master Qatar W.L.L. - Saudi Arabia Branch. All rights reserved.</span>
           <div className="flex gap-5">
             <a href="#" className="transition-colors hover:text-gold">Privacy Policy</a>

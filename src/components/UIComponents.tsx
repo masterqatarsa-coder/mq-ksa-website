@@ -58,10 +58,10 @@ export function StatCounter({ value, suffix = "", label, delay = 0 }: StatCounte
     <Reveal delay={delay}>
       <div
         ref={ref}
-        className="surface-panel interactive-card relative overflow-hidden rounded-[1.75rem] border border-white/8 px-5 py-6 text-center md:px-6 md:py-7"
+        className="surface-panel interactive-card relative overflow-hidden rounded-[1.75rem] border border-white/8 px-4 py-4 text-center md:px-5 md:py-5"
       >
         <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-gold/80 to-transparent" />
-        <div className="font-condensed text-4xl font-black leading-none text-black md:text-5xl">
+        <div className="font-condensed text-2xl font-black leading-none text-black md:text-3xl">
           {count}
           {suffix}
         </div>

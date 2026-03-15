@@ -148,26 +148,26 @@ export function Navbar() {
 
   const servicesActive = location.pathname === "/services" || (isCompactNav && location.hash === "#services");
 
-  const shellClasses = "border-slate-300/80 bg-white/88 shadow-[0_18px_60px_-28px_rgba(15,23,42,0.18)] backdrop-blur-2xl";
-  const topBarClasses = "border-slate-200/90 bg-slate-100/70 text-slate-700";
-  const topBarLeadClasses = "text-slate-800";
-  const topBarSubtleClasses = "text-slate-500";
-  const brandTitleClasses = "text-navy-900";
-  const brandSubtitleClasses = "text-gold/90";
-  const navIdleClasses = "text-navy-900/88 hover:bg-slate-100 hover:text-navy-950";
-  const navActiveClasses = "bg-primary/6 text-primary";
-  const mobilePanelClasses = "border-slate-200/90 bg-white/96";
-  const mobileButtonClasses = "border-slate-200 bg-slate-50 text-navy-950 hover:border-slate-300 hover:bg-white";
-  const mobileLabelClasses = "text-navy-950";
-  const mobileDescClasses = "text-slate-600";
-  const utilityCardClasses = "border-slate-200 bg-slate-50 text-navy-950 hover:bg-white";
-  const utilityLabelClasses = "text-slate-500";
+  const shellClasses = "border-navy-700/30 bg-white/90 shadow-[0_20px_42px_-16px_rgba(18,35,66,0.2)] backdrop-blur-2xl";
+  const topBarClasses = "border-navy-600/20 bg-navy-50/70 text-navy-900";
+  const topBarLeadClasses = "text-navy-900";
+  const topBarSubtleClasses = "text-navy-700";
+  const brandTitleClasses = "text-slate-900";
+  const brandSubtitleClasses = "text-navy-700";
+  const navIdleClasses = "text-navy-900 hover:text-navy-800";
+  const navActiveClasses = "bg-navy-100 text-navy-900";
+  const mobilePanelClasses = "border-navy-200/70 bg-white/96";
+  const mobileButtonClasses = "border-navy-300 bg-slate-50 text-navy-900 hover:border-navy-500 hover:bg-navy-50";
+  const mobileLabelClasses = "text-navy-900";
+  const mobileDescClasses = "text-navy-700";
+  const utilityCardClasses = "border-navy-200 bg-slate-50 text-navy-900 hover:bg-white";
+  const utilityLabelClasses = "text-navy-700";
 
   return (
     <nav
       className="fixed inset-x-0 z-50 px-3 transition-all duration-300 md:px-5 top-0 pt-2.5"
     >
-      <div className="mx-auto max-w-[1380px]">
+      <div className="mx-auto max-w-7xl xl:max-w-[1400px]">
         <div className={`relative rounded-[1.7rem] border transition-all duration-300 ${shellClasses}`}>
           <div className={`hidden items-center justify-between rounded-t-[1.7rem] border-b px-5 py-2 text-[11px] font-medium md:flex ${topBarClasses}`}>
             <div className="flex items-center gap-4 uppercase tracking-[0.24em]">
@@ -191,20 +191,37 @@ export function Navbar() {
           </div>
 
           <div className="flex h-[76px] items-center justify-between px-4 md:px-5 xl:px-6">
-            <Link
-              to="/"
-              className="group flex shrink-0 items-center gap-2.5 sm:gap-3"
-            >
-              <img src={mqLogo} alt="MQ logo" className="h-12 w-19 object-cover rounded-lg" />
-              <div className="min-w-0 max-w-[9.5rem] sm:max-w-none">
-                <div className={`truncate font-condensed text-[15px] font-black leading-none tracking-[0.08em] sm:text-[18px] ${brandTitleClasses}`}>
-                  MASTER QATAR
+            <div className="group flex shrink-0 flex-row flex-nowrap gap-1 md:gap-2">
+              <Link
+                to="/"
+                className="flex items-center gap-2.5 sm:gap-3 p-2 rounded-2xl transition-all duration-300 hover:bg-gray-50"
+              >
+                <img src={mqLogo} alt="MQ logo" className="h-8 w-8 sm:h-12 sm:w-12 lg:h-12 lg:w-19 object-contain rounded-lg" />
+                <div className="min-w-0 max-w-[9.5rem] sm:max-w-none">
+                  <div className={`truncate font-condensed text-[12px] font-black leading-none tracking-[0.08em] sm:text-[15px] lg:text-[18px] ${brandTitleClasses}`}>
+                    MASTER QATAR
+                  </div>
+                  <div className={`mt-1 truncate text-[8px] font-semibold uppercase tracking-[0.22em] ${brandSubtitleClasses} sm:text-[9px] lg:text-[10px] sm:tracking-[0.28em]`}>
+                    KSA-Jeddah
+                  </div>
                 </div>
-                <div className={`mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.22em] ${brandSubtitleClasses} sm:text-[10px] sm:tracking-[0.28em]`}>
-                  Kingdom of Saudi Arabia 
+              </Link>
+              <span className="flex items-center text-slate-900 font-bold text-xl leading-[4rem]">|</span>
+              <Link
+                to="/"
+                className="flex items-center gap-2.5 sm:gap-3 p-2 rounded-2xl transition-all duration-300 hover:bg-gray-50"
+              >
+                <img src={mqLogo} alt="MQ logo" className="h-8 w-8 sm:h-12 sm:w-12 lg:h-12 lg:w-19 object-contain rounded-lg" />
+                <div className="min-w-0 max-w-[9.5rem] sm:max-w-none">
+                  <div className={`truncate font-condensed text-[12px] font-black leading-none tracking-[0.08em] sm:text-[15px] lg:text-[18px] ${brandTitleClasses}`}>
+                    QM Arabia
+                  </div>
+                  <div className={`mt-1 truncate text-[8px] font-semibold uppercase tracking-[0.22em] ${brandSubtitleClasses} sm:text-[9px] lg:text-[10px] sm:tracking-[0.28em]`}>
+                    KSA-Jeddah
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
             <div className="hidden items-center gap-1 lg:flex">
               {navItems.map((item) =>

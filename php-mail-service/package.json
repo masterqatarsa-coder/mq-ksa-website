@@ -1,0 +1,10 @@
+{
+    "name": "mq-website-mail-service",
+    "version": "1.0.0",
+    "description": "PHP mail service for MQ website using G Suite SMTP",
+    "main": "index.php",
+    "scripts": {
+        "start": "php -S localhost:8000"
+    },
+    "dependencies": {}
+}

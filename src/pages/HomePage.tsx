@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, CheckCircle, Clock3, Shield, Zap } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading, StatCounter } from "@/components/UIComponents";
+import bodySlider1 from "@/assets/bodyslider/img.jpg";
+import bodySlider2 from "@/assets/bodyslider/img1.jpg";
+import bodySlider3 from "@/assets/bodyslider/img3.jpg";
+import bodySlider4 from "@/assets/bodyslider/img4.jpg";
+import bodySlider5 from "@/assets/bodyslider/img5.jpg";
+import bodySlider6 from "@/assets/bodyslider/img6.jpg";
+import bodySlider7 from "@/assets/bodyslider/img7.jpg";
+import bodySlider8 from "@/assets/bodyslider/img8.jpg";
 import heroImage from "@/assets/hero-construction.jpg";
 import mepImg from "@/assets/service-mep.jpg";
 import elvImg from "@/assets/service-elv.jpg";
@@ -134,16 +142,41 @@ const deliverySteps = [
 
 export default function HomePage() {
   const [showAllClients, setShowAllClients] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [bodySlider1, bodySlider2, bodySlider3, bodySlider4, bodySlider5, bodySlider6, bodySlider7, bodySlider8];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [heroSlides.length]);
 
   return (
     <div>
+      <style>{`
+        @keyframes ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
       <section className="relative min-h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950/96 via-primary/86 to-secondary/72" />
-        <div className="hero-grid absolute inset-0 opacity-25" />
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <img
+              key={index}
+              src={slide}
+              alt={`Hero slide ${index + 1}`}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950/40 via-primary/25 to-secondary/15" />
+        <div className="hero-grid absolute inset-0 opacity-8" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,167,255,0.26),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,201,87,0.18),transparent_28%)]" />
         <div className="accent-orb absolute -left-20 top-28 h-60 w-60 rounded-full bg-accent/16 blur-3xl" />
         <div className="accent-orb absolute right-0 top-48 h-56 w-56 rounded-full bg-gold/14 blur-3xl" />
@@ -160,7 +193,7 @@ export default function HomePage() {
             <Reveal delay={80}>
               <h1 className="mt-6 max-w-4xl font-condensed text-5xl font-black leading-[0.88] text-white md:text-7xl xl:text-[5.5rem]">
                 A sharper digital face for
-                <span className="block text-gradient-blue">a high-capability engineering partner.</span>
+                <span className="block text-white">a high-capability engineering partner.</span>
               </h1>
             </Reveal>
 
@@ -180,17 +213,18 @@ export default function HomePage() {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/6 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition-all duration-200 hover:border-gold/40 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-secondary px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_24px_40px_-18px_rgba(23,160,255,0.75)] transition-all duration-200 hover:-translate-y-0.5"
               >
                 Book a Consultation
+                <ArrowRight size={16} />
               </Link>
             </Reveal>
 
-            <Reveal delay={300} className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <Reveal delay={300} className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 p-6 rounded-[2rem] border border-white/10 bg-black/20 backdrop-blur-xl">
               {highlightCards.map(({ icon: Icon, title, body }) => (
                 <div
                   key={title}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4 backdrop-blur-xl"
+                  className="rounded-[1.4rem] border border-white/10 bg-black/20 p-4 backdrop-blur-xl"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-gold">
                     <Icon size={20} />
@@ -203,63 +237,6 @@ export default function HomePage() {
               ))}
             </Reveal>
           </div>
-
-          <Reveal delay={140} className="lg:justify-self-end">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.08] p-6 text-white shadow-[0_28px_70px_-30px_rgba(4,10,24,0.75)] backdrop-blur-2xl md:p-7">
-              <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-gold/80 to-transparent" />
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/90">
-                    Delivery snapshot
-                  </div>
-                  <div className="mt-2 font-condensed text-3xl font-black leading-none md:text-4xl">
-                    Built for complex projects.
-                  </div>
-                </div>
-                <div className="rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                  GCC Ready
-                </div>
-              </div>
-
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-[1.4rem] border border-white/10 bg-navy-950/38 p-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/68">Experience</div>
-                  <div className="mt-2 font-condensed text-4xl font-black text-gold">12+</div>
-                  <div className="text-sm text-white/76">years across major GCC sectors</div>
-                </div>
-                <div className="rounded-[1.4rem] border border-white/10 bg-navy-950/38 p-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/68">Workforce</div>
-                  <div className="mt-2 font-condensed text-4xl font-black text-gold">1300+</div>
-                  <div className="text-sm text-white/76">specialized personnel</div>
-                </div>
-              </div>
-
-              <div className="mt-4 rounded-[1.5rem] border border-white/10 bg-navy-950/34 p-5">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/68">Capabilities</div>
-                    <div className="mt-1 text-sm text-white/90">A balanced mix of engineering execution and operational support.</div>
-                  </div>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/16 text-accent">
-                    <Zap size={18} />
-                  </div>
-                </div>
-
-                <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {services.map((service) => (
-                    <div key={service.title} className="rounded-2xl border border-white/8 bg-white/5 px-4 py-3">
-                      <div className="text-sm font-semibold text-white/90">{service.title}</div>
-                      <div className="mt-1 text-xs leading-relaxed text-white/72">{service.points[0]}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-4 rounded-[1.4rem] border border-gold/18 bg-gold/10 px-4 py-3 text-sm leading-relaxed text-white/90">
-                Designed to communicate trust faster, move people through the site more clearly, and give the brand a stronger premium presence.
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         <div className="relative z-10 border-y border-white/10 bg-navy-950/36 backdrop-blur-md">
@@ -276,9 +253,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary py-16">
+      <section className="bg-primary py-1">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-1 md:grid-cols-2 xl:grid-cols-4">
             <StatCounter value={12} suffix="+" label="Years of Expertise" delay={0} />
             <StatCounter value={1300} suffix="+" label="Professional Workforce" delay={80} />
             <StatCounter value={20} suffix="+" label="MNC Client Portfolio" delay={160} />
@@ -298,14 +275,14 @@ export default function HomePage() {
               />
 
               <Reveal delay={120}>
-                <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-black">
                   The company story is already strong. This refreshed interface makes that strength easier to feel through clearer hierarchy, more premium surfaces, and a better rhythm between proof points, services, and calls to action.
                 </p>
               </Reveal>
 
               <Reveal delay={180} className="mt-8 grid gap-3 sm:grid-cols-2">
                 {strengths.map((strength) => (
-                  <div key={strength} className="surface-panel rounded-[1.35rem] border border-white/60 px-4 py-4 text-sm text-muted-foreground">
+                  <div key={strength} className="surface-panel rounded-[1.35rem] border border-white/60 px-4 py-4 text-sm text-black">
                     <div className="flex items-start gap-3">
                       <CheckCircle size={16} className="mt-0.5 shrink-0 text-accent" />
                       <span>{strength}</span>
@@ -313,6 +290,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </Reveal>
+
             </div>
 
             <Reveal delay={140}>
@@ -320,7 +298,7 @@ export default function HomePage() {
                 <div className="surface-panel rounded-[1.8rem] border border-white/60 p-6 sm:col-span-2">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Brand direction</div>
                   <div className="mt-3 font-condensed text-3xl font-black leading-none text-primary">A more premium interface for a company that already works at a premium level.</div>
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-black">
                     The new UI system uses stronger contrast, layered surfaces, motion with restraint, and a clearer narrative arc so the website feels closer to the quality of the work being described.
                   </p>
                 </div>
@@ -330,7 +308,7 @@ export default function HomePage() {
                       <Icon size={20} />
                     </div>
                     <div className="mt-5 font-condensed text-2xl font-bold text-primary">{title}</div>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-black">{body}</p>
                   </div>
                 ))}
               </div>
@@ -491,25 +469,25 @@ export default function HomePage() {
             subtitle="The new project layout creates more contrast between sectors, helping visitors understand the breadth of experience without reading dense copy first."
             center
           />
-
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          <div className="mt-18 grid gap-8 lg:grid-cols-3">
             {projectShowcase.map((project, index) => (
               <Reveal key={project.title} delay={index * 90} className={project.span}>
-                <div className="interactive-card group relative h-[22rem] overflow-hidden rounded-[1.9rem] border border-white/60 shadow-card">
+                <div className="interactive-card group relative h-[28rem] overflow-hidden rounded-[2.5rem] border border-white/80 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-3 hover:border-white/95">
                   <img
                     src={project.img}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-all duration-700 group-hover:scale-115 group-hover:rotate-2"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/92 via-navy-900/36 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold/90">
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/96 via-navy-900/30 to-transparent group-hover:from-navy-950/98" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                    <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/12 backdrop-blur-sm px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-gold shadow-lg">
+                      <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
                       Sector focus
                     </div>
-                    <div className="mt-4 font-condensed text-3xl font-black text-white md:text-4xl">
+                    <div className="mt-6 font-condensed text-4xl font-black text-white md:text-5xl leading-tight">
                       {project.title}
                     </div>
-                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/80">{project.detail}</p>
+                    <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 font-medium">{project.detail}</p>
                   </div>
                 </div>
               </Reveal>
@@ -528,8 +506,9 @@ export default function HomePage() {
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold/85">
                     <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                    Ready for the next pass
+                    GCC Ready
                   </div>
+                  <div>for the next pass</div>
                   <h2 className="mt-5 max-w-2xl font-condensed text-4xl font-black leading-none md:text-5xl">
                     This pass gives the site stronger polish. The next step is content accuracy and conversion flow.
                   </h2>

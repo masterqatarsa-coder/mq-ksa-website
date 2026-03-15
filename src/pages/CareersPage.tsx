@@ -30,14 +30,30 @@ export default function CareersPage({ embedded = false }: CareersPageProps) {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.phone.trim() || !form.role.trim() || !form.message.trim()) {
       setFormError("Please fill in all fields: name, email, phone, role, and message.");
       return;
     }
     setFormError(null);
-    setSubmitted(true);
+    try {
+      const response = await fetch('https://mail-service.qatarmaster.com/careers.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", phone: "", role: "", message: "" });
+      } else {
+        setFormError("Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      setFormError("Network error. Please check your connection and try again.");
+    }
   };
 
   return (

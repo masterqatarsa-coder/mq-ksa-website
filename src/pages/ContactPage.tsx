@@ -15,15 +15,30 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.phone.trim() || !form.message.trim()) {
       setError("Please fill in all fields before submitting.");
       return;
     }
     setError(null);
-    setSubmitted(true);
-    setForm({ name: "", email: "", phone: "", message: "" });
+    try {
+      const response = await fetch('https://mail-service.qatarmaster.com/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setError("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
