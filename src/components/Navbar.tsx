@@ -146,38 +146,26 @@ export function Navbar() {
     setServicesOpen(false);
   };
 
-  const isOverlayMode = isHome && !scrolled;
   const servicesActive = location.pathname === "/services" || (isCompactNav && location.hash === "#services");
 
-  const shellClasses = isOverlayMode
-    ? "border-white/14 bg-navy-950/72 shadow-[0_18px_60px_-28px_rgba(7,19,38,0.75)] backdrop-blur-2xl"
-    : "border-slate-300/80 bg-white/88 shadow-[0_18px_60px_-28px_rgba(15,23,42,0.18)] backdrop-blur-2xl";
-  const topBarClasses = isOverlayMode
-    ? "border-white/10 bg-black/10 text-white/80"
-    : "border-slate-200/90 bg-slate-100/70 text-slate-700";
-  const topBarLeadClasses = isOverlayMode ? "text-white/88" : "text-slate-800";
-  const topBarSubtleClasses = isOverlayMode ? "text-white/62" : "text-slate-500";
-  const brandTitleClasses = isOverlayMode ? "text-white" : "text-navy-900";
-  const navIdleClasses = isOverlayMode
-    ? "text-white/86 hover:bg-white/8 hover:text-white"
-    : "text-navy-900/88 hover:bg-slate-100 hover:text-navy-950";
-  const navActiveClasses = isOverlayMode ? "bg-white/12 text-gold" : "bg-primary/6 text-primary";
-  const mobilePanelClasses = isOverlayMode
-    ? "border-white/10 bg-navy-950/96"
-    : "border-slate-200/90 bg-white/96";
-  const mobileButtonClasses = isOverlayMode
-    ? "border-white/10 bg-white/6 text-white/92 hover:border-white/20 hover:bg-white/10"
-    : "border-slate-200 bg-slate-50 text-navy-950 hover:border-slate-300 hover:bg-white";
-  const mobileLabelClasses = isOverlayMode ? "text-white/90" : "text-navy-950";
-  const mobileDescClasses = isOverlayMode ? "text-white/68" : "text-slate-600";
-  const utilityCardClasses = isOverlayMode
-    ? "border-white/10 bg-white/6 text-white/92 hover:bg-white/10"
-    : "border-slate-200 bg-slate-50 text-navy-950 hover:bg-white";
-  const utilityLabelClasses = isOverlayMode ? "text-white/62" : "text-slate-500";
+  const shellClasses = "border-slate-300/80 bg-white/88 shadow-[0_18px_60px_-28px_rgba(15,23,42,0.18)] backdrop-blur-2xl";
+  const topBarClasses = "border-slate-200/90 bg-slate-100/70 text-slate-700";
+  const topBarLeadClasses = "text-slate-800";
+  const topBarSubtleClasses = "text-slate-500";
+  const brandTitleClasses = "text-navy-900";
+  const brandSubtitleClasses = "text-gold/90";
+  const navIdleClasses = "text-navy-900/88 hover:bg-slate-100 hover:text-navy-950";
+  const navActiveClasses = "bg-primary/6 text-primary";
+  const mobilePanelClasses = "border-slate-200/90 bg-white/96";
+  const mobileButtonClasses = "border-slate-200 bg-slate-50 text-navy-950 hover:border-slate-300 hover:bg-white";
+  const mobileLabelClasses = "text-navy-950";
+  const mobileDescClasses = "text-slate-600";
+  const utilityCardClasses = "border-slate-200 bg-slate-50 text-navy-950 hover:bg-white";
+  const utilityLabelClasses = "text-slate-500";
 
   return (
     <nav
-      className={`fixed inset-x-0 z-50 px-3 transition-all duration-300 md:px-5 ${isOverlayMode ? "top-0 pt-3 md:pt-4" : "top-0 pt-2.5"}`}
+      className="fixed inset-x-0 z-50 px-3 transition-all duration-300 md:px-5 top-0 pt-2.5"
     >
       <div className="mx-auto max-w-[1380px]">
         <div className={`relative rounded-[1.7rem] border transition-all duration-300 ${shellClasses}`}>
@@ -203,13 +191,16 @@ export function Navbar() {
           </div>
 
           <div className="flex h-[76px] items-center justify-between px-4 md:px-5 xl:px-6">
-            <Link to="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3">
-              <img src={mqLogo} alt="MQ logo" className="h-12 w-19 object-cover rounded-2xl" />
+            <Link
+              to="/"
+              className="group flex shrink-0 items-center gap-2.5 sm:gap-3"
+            >
+              <img src={mqLogo} alt="MQ logo" className="h-12 w-19 object-cover rounded-lg" />
               <div className="min-w-0 max-w-[9.5rem] sm:max-w-none">
                 <div className={`truncate font-condensed text-[15px] font-black leading-none tracking-[0.08em] sm:text-[18px] ${brandTitleClasses}`}>
                   MASTER QATAR
                 </div>
-                <div className="mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.22em] text-gold/90 sm:text-[10px] sm:tracking-[0.28em]">
+                <div className={`mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.22em] ${brandSubtitleClasses} sm:text-[10px] sm:tracking-[0.28em]`}>
                   Kingdom of Saudi Arabia 
                 </div>
               </div>
@@ -253,34 +244,20 @@ export function Navbar() {
                           : "invisible -translate-y-2 opacity-0 pointer-events-none"
                       }`}
                     >
-                      <div
-                        className={`rounded-[1.75rem] border p-3 backdrop-blur-2xl ${
-                          isOverlayMode
-                            ? "border-white/10 bg-navy-950/96 shadow-[0_28px_80px_-32px_rgba(3,10,24,0.85)]"
-                            : "border-slate-200 bg-white/96 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.18)]"
-                        }`}
-                      >
+                      <div className="rounded-[1.75rem] border p-3 backdrop-blur-2xl border-slate-200 bg-white/96 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.18)]">
                         <div
-                          className={`flex items-center justify-between rounded-[1.2rem] border px-4 py-3 ${
-                            isOverlayMode ? "border-white/10 bg-white/6" : "border-slate-200 bg-slate-50"
-                          }`}
-                        >
+                          className="flex items-center justify-between rounded-[1.2rem] border px-4 py-3 border-slate-200 bg-slate-50">
                           <div>
-                            <div className={`text-[11px] font-semibold uppercase tracking-[0.24em] ${isOverlayMode ? "text-white/70" : "text-slate-500"}`}>
+                            <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
                               Service matrix
                             </div>
-                            <div className={`mt-1 text-sm font-semibold ${isOverlayMode ? "text-white" : "text-navy-950"}`}>
+                            <div className="mt-1 text-sm font-semibold text-navy-950">
                               Explore the full engineering stack we deliver.
                             </div>
                           </div>
                           <Link
                             to="/services"
-                            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition-colors ${
-                              isOverlayMode
-                                ? "border-white/12 text-gold hover:border-gold/30 hover:text-white"
-                                : "border-slate-200 text-primary hover:border-primary/20 hover:text-navy-950"
-                            }`}
-                          >
+                            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition-colors text-primary hover:border-primary/20 hover:text-navy-950" >
                             View all <ArrowRight size={12} />
                           </Link>
                         </div>
@@ -293,22 +270,13 @@ export function Navbar() {
                                 key={child.label}
                                 type="button"
                                 onClick={() => handleServiceClick(child.href)}
-                                className={`group/item flex min-h-[108px] items-start gap-3 rounded-[1.25rem] border px-4 py-4 text-left transition-all duration-200 ${
-                                  isOverlayMode
-                                    ? "border-white/10 bg-white/6 hover:border-accent/30 hover:bg-white/10"
-                                    : "border-slate-200 bg-slate-50 hover:border-primary/18 hover:bg-white"
-                                }`}
-                              >
+                                className="group/item flex min-h-[108px] items-start gap-3 rounded-[1.25rem] border border-slate-200 bg-slate-50 px-4 py-4 text-left transition-all duration-200 hover:border-primary/18 hover:bg-white">
                                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-accent/14 text-accent transition-colors group-hover/item:bg-accent/22 group-hover/item:text-gold">
                                   <Icon size={18} />
                                 </div>
                                 <div>
-                                  <div className={`text-sm font-semibold group-hover/item:text-gold ${isOverlayMode ? "text-white" : "text-navy-950"}`}>
-                                    {child.label}
-                                  </div>
-                                  <div className={`mt-2 text-xs leading-relaxed ${isOverlayMode ? "text-white/72" : "text-slate-600"}`}>
-                                    {child.desc}
-                                  </div>
+                                  <div className="text-sm font-semibold group-hover/item:text-gold text-navy-950">{child.label}</div>
+                                  <div className="mt-2 text-xs leading-relaxed text-slate-600">{child.desc}</div>
                                 </div>
                               </button>
                             );
@@ -377,11 +345,11 @@ export function Navbar() {
                         </button>
                         <div className={`grid transition-all duration-300 ${mobileServicesOpen ? "grid-rows-[1fr] pt-2" : "grid-rows-[0fr]"}`}>
                           <div className="overflow-hidden">
-                            <div className={`space-y-2 rounded-[1.4rem] border p-2 ${isOverlayMode ? "border-white/10 bg-white/5" : "border-slate-200 bg-slate-50"}`}>
+                            <div className="space-y-2 rounded-[1.4rem] border border-slate-200 bg-slate-50 p-2">
                               <button
                                 type="button"
                                 onClick={() => handleNavItemClick("/services")}
-                                className={`flex w-full items-center justify-between rounded-xl px-3 py-3 text-left transition-colors ${isOverlayMode ? "hover:bg-white/8" : "hover:bg-white"}`}
+                                className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left transition-colors hover:bg-white"
                               >
                                 <div>
                                   <div className={`text-sm font-semibold ${mobileLabelClasses}`}>All Services</div>
@@ -396,7 +364,7 @@ export function Navbar() {
                                     key={child.label}
                                     type="button"
                                     onClick={() => handleServiceClick(child.href)}
-                                    className={`flex w-full items-start gap-3 rounded-xl px-3 py-3 text-left transition-colors ${isOverlayMode ? "hover:bg-white/8" : "hover:bg-white"}`}
+                                    className="flex w-full items-start gap-3 rounded-xl px-3 py-3 text-left transition-colors hover:bg-white"
                                   >
                                     <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-accent/14 text-accent">
                                       <Icon size={16} />
@@ -418,9 +386,7 @@ export function Navbar() {
                         onClick={() => handleNavItemClick(item.href)}
                         className={`block w-full rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition-all ${
                           location.pathname === item.href || (isCompactNav && location.hash === `#${item.href.replace("/", "")}`)
-                            ? isOverlayMode
-                              ? "border-gold/20 bg-white/10 text-gold"
-                              : "border-primary/15 bg-primary/6 text-primary"
+                            ? "border-primary/15 bg-primary/6 text-primary"
                             : mobileButtonClasses
                         }`}
                       >
