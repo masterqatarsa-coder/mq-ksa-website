@@ -50,7 +50,7 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
           details={
             <div className="mt-6 grid max-w-md gap-3 text-sm text-primary-foreground/90 md:grid-cols-2">
               <a
-                href="https://www.google.com/maps/place/Jeddah,+Saudi+Arabia"
+                href="https://www.google.com/maps/place/Master+Qatar/@21.5015688,39.1832624,459m/data=!3m1!1e3!4m6!3m5!1s0x15c3cfecb435a733:0xeca822ac116fa5d3!8m2!3d21.5014555!4d39.1843368!16s%2Fg%2F11z2t0179j?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
@@ -61,24 +61,36 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                   <span className="block text-xs text-muted-foreground">View on map</span>
                 </span>
               </a>
+              <div className="grid grid-cols-1 gap-2">
+                <a
+                  href="tel:+966539817923"
+                  className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
+                >
+                  <Phone className="h-4 w-4 text-accent" />
+                  <span>
+                    +966 539817923
+                    <span className="block text-xs text-muted-foreground">Call us</span>
+                  </span>
+                </a>
+                <a
+                  href="tel:+966509810613"
+                  className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
+                >
+                  <Phone className="h-4 w-4 text-accent" />
+                  <span>
+                    +966 509810613
+                    <span className="block text-xs text-muted-foreground">Call us</span>
+                  </span>
+                </a>
+              </div>
               <a
-                href="tel:+966000000000"
-                className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
-              >
-                <Phone className="h-4 w-4 text-accent" />
-                <span>
-                  +966 00 000 0000
-                  <span className="block text-xs text-muted-foreground">Call us</span>
-                </span>
-              </a>
-              <a
-                href="mailto:mail@qatarmaster.com"
+                href="mailto:mail.masterqatar@gmail.com"
                 className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left hover:border-accent/30 hover:bg-white/12"
               >
                 <Mail className="h-4 w-4 text-accent" />
                 <span>
-                  mail@qatarmaster.com
-                  <span className="block text-xs text-muted-foreground">Email us</span>
+                  mail.masterqatar@gmail.com
+                  <span className="block text-xs text-muted-foreground">Send us an email</span>
                 </span>
               </a>
             </div>
@@ -105,7 +117,7 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                     lines: [
                       <a
                         key="location"
-                        href="https://www.google.com/maps/place/Jeddah,+Saudi+Arabia"
+                        href="https://www.google.com/maps/place/Master+Qatar/@21.5015688,39.1832624,459m/data=!3m1!1e3!4m6!3m5!1s0x15c3cfecb435a733:0xeca822ac116fa5d3!8m2!3d21.5014555!4d39.1843368!16s%2Fg%2F11z2t0179j?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D"
                         target="_blank"
                         rel="noreferrer"
                         className="text-sm text-foreground font-semibold hover:text-primary"
@@ -120,10 +132,10 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                     lines: [
                       <a
                         key="phone"
-                        href="tel:+966000000000"
+                        href="tel:+966539817923"
                         className="text-sm text-foreground font-semibold hover:text-primary"
                       >
-                        +966 00 000 0000
+                        +966 539817923 / 509810613
                       </a>,
                     ],
                   },
@@ -133,10 +145,10 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                     lines: [
                       <a
                         key="email"
-                        href="mailto:mail@qatarmaster.com"
+                        href="mailto:mail.masterqatar@gmail.com"
                         className="text-sm text-foreground font-semibold hover:text-primary"
                       >
-                        mail@qatarmaster.com
+                        mail.masterqatar@gmail.com
                       </a>,
                     ],
                   },
@@ -145,7 +157,7 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
                     title: "Business Hours",
                     lines: [
                       <span key="hours1" className="text-sm text-foreground">
-                        Sunday – Thursday: 8:00 AM – 6:00 PM
+                        8AM to 5PM
                       </span>,
                       <span key="hours2" className="text-sm text-foreground">
                         Friday – Saturday: Closed
@@ -263,14 +275,14 @@ export default function ContactPage({ embedded = false }: ContactPageProps) {
       {/* Map */}
       <section className="h-80 bg-muted relative overflow-hidden">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233.1!2d39.1925!3d21.4858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059b5b9a96b8f16!2sJeddah%2C%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d39.1843368!3d21.5014555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cfecb435a733:0xeca822ac116fa5d3!2sMaster+Qatar!5e0!3m2!1sen!2s!4v"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Master Qatar W.L.L. — Saudi Arabia Location"
+          title="Master Qatar W.L.L. — Saudi Arabia Office Location"
         />
       </section>
     </div>

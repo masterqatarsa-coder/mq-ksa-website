@@ -2,10 +2,51 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PageHero, SectionHeading } from "@/components/UIComponents";
 import { Zap, Wifi, Settings, Wrench, Users, Package, ChevronDown } from "lucide-react";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import mepImg from "@/assets/service-mep.jpg";
 import elvImg from "@/assets/service-elv.jpg";
-import autoImg from "@/assets/service-automation.jpg";
+import autoImg from "@/assets/automation-system-doors-profile.png";
 import fmImg from "@/assets/service-fm.jpg";
+import freshAirLouversImg from "@/assets/fresh-air-louvers.jpg";
+import volumeControlDamperImg from "@/assets/volume-control-damper.jpg";
+import nonReturnDampersImg from "@/assets/non-return-damper-1000x1000.png";
+import acousticLouversImg from "@/assets/acoustic-louvers.jpg";
+import soundAttenuatorsImg from "@/assets/sound-attenuators.jpg";
+import pressureReliefDampersImg from "@/assets/pressure-relief-dampers.jpg";
+import constantAirVolumeImg from "@/assets/constant-air-volume.jpg";
+import sandTrapLouversImg from "@/assets/sand-trap-louvers.jpg";
+import linearSlotDiffusersImg from "@/assets/linear-slot-diffusers.jpg";
+import roundCeilingDiffusersImg from "@/assets/round-ceiling-diffusers.jpg";
+import swirlDiffusersImg from "@/assets/swirl-diffusers.jpg";
+import jetDiffusersImg from "@/assets/jet-diffusers.jpg";
+import ceilingDiffusersImg from "@/assets/ceiling-diffusers.jpg";
+import linearDiffusersImg from "@/assets/linear-diffusers.jpg";
+import registersImg from "@/assets/registers.jpg";
+import grillesImg from "@/assets/grilles.jpg";
+import variableAirVolumeImg from "@/assets/variable-air-volume.jpg";
+import fireDampersImg from "@/assets/fire-dampers.jpg";
+import discValvesImg from "@/assets/disc-valves.jpg";
+import doors5Img from "@/assets/doors5.jpg";
+import doors6Img from "@/assets/doors6.jpg";
+import doors7Img from "@/assets/doors7.jpg";
+import door8Img from "@/assets/door8.png";
+import doors9Img from "@/assets/doors9.jpg";
+import accessControlImg from "@/assets/ELV/accesscontrollsystem.jpeg";
+import airflowControlImg from "@/assets/ELV/airflow-control-system.jpg";
+import bmsImg from "@/assets/ELV/bms1.jpeg";
+import homeAutomationImg from "@/assets/ELV/homeautomation.jpeg";
+import lightingControlImg from "@/assets/ELV/lighting-controll-system.jpg";
+import publicAddressImg from "@/assets/ELV/public-address-system.jpg";
+import rpmsImg from "@/assets/ELV/rpms.jpeg";
+import securityImg from "@/assets/ELV/security.jpg";
+import structuredCableImg from "@/assets/ELV/structured-cable-solution.jpg";
+import electricalWorksImg from "@/assets/MEP/electrical-works.jpg";
+import fireFightingImg from "@/assets/MEP/fire-fighting.jpg";
+import hvacImg from "@/assets/MEP/hvac.jpg";
+import mepSectorImg from "@/assets/MEP/mep-sector.jpg";
+import plumbingImg from "@/assets/MEP/plumbing.jpg";
 
 const services = [
   {
@@ -183,6 +224,85 @@ const services = [
   },
 ];
 
+const tradingProducts = [
+  {
+    name: "Fresh Air Louvers",
+    image: freshAirLouversImg
+  },
+  {
+    name: "Volume Control Damper",
+    image: volumeControlDamperImg
+  },
+  {
+    name: "Non Return Dampers",
+    image: nonReturnDampersImg
+  },
+  {
+    name: "Acoustic Louvers",
+    image: acousticLouversImg
+  },
+  {
+    name: "Sound Attenuators",
+    image: soundAttenuatorsImg
+  },
+  {
+    name: "Pressure Relief Dampers",
+    image: pressureReliefDampersImg
+  },
+  {
+    name: "Constant Air Volume (CAV)",
+    image: constantAirVolumeImg
+  },
+  {
+    name: "Sand Trap Louvers",
+    image: sandTrapLouversImg
+  },
+  {
+    name: "Linear Slot Diffusers",
+    image: linearSlotDiffusersImg
+  },
+  {
+    name: "Round Ceiling Diffusers",
+    image: roundCeilingDiffusersImg
+  },
+  {
+    name: "Swirl Diffusers",
+    image: swirlDiffusersImg
+  },
+  {
+    name: "Jet Diffusers",
+    image: jetDiffusersImg
+  },
+  {
+    name: "Ceiling Diffusers",
+    image: ceilingDiffusersImg
+  },
+  {
+    name: "Linear Diffusers",
+    image: linearDiffusersImg
+  },
+  {
+    name: "Registers",
+    image: registersImg
+  },
+  {
+    name: "Grilles",
+    image: grillesImg
+  },
+  {
+    name: "Variable Air Volume (VAV)",
+    image: variableAirVolumeImg
+  },
+  {
+    name: "Fire Dampers",
+    image: fireDampersImg
+  },
+  {
+    name: "Disc Valves",
+    image: discValvesImg
+  }
+];
+
 interface ServicesPageProps {
   embedded?: boolean;
 }
@@ -218,7 +338,8 @@ export default function ServicesPage({ embedded = false }: ServicesPageProps) {
     setExpandedSub((prev) => ({ ...prev, [key]: !prev[key] }));
 
   return (
-    <div>
+    <div>
+
       {!embedded && (
         <PageHero
         title="Our Services"
@@ -240,7 +361,7 @@ export default function ServicesPage({ embedded = false }: ServicesPageProps) {
             {services.map((svc, index) => {
               const Icon = svc.icon;
               const isEven = index % 2 === 0;
-              return (
+              const serviceElement = (
                 <div
                   key={svc.id}
                   id={svc.id}
@@ -308,7 +429,287 @@ export default function ServicesPage({ embedded = false }: ServicesPageProps) {
                   </div>
                 </div>
               );
+
+              if (svc.id === "mep") {
+                return (
+                  <div key={svc.id}>
+                    {serviceElement}
+                    
+                    {/* MEP Systems Gallery */}
+                    <div className="mt-20">
+                      <div className="text-center mb-12">
+                        <h3 className="font-condensed font-bold text-2xl text-primary mb-4">MEP Systems Gallery</h3>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                          Explore our comprehensive MEP engineering solutions for building infrastructure and systems
+                        </p>
+                      </div>
+
+                      <div className="mep-systems-slider">
+                        <Slider
+                          dots={true}
+                          infinite={true}
+                          speed={500}
+                          slidesToShow={3}
+                          slidesToScroll={1}
+                          autoplay={true}
+                          autoplaySpeed={4000}
+                          pauseOnHover={true}
+                          arrows={true}
+                          responsive={[
+                            {
+                              breakpoint: 1024,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                              }
+                            },
+                            {
+                              breakpoint: 768,
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                              }
+                            }
+                          ]}
+                        >
+                          {[
+                            { img: mepSectorImg, title: "MEP Sector Overview" },
+                            { img: electricalWorksImg, title: "Electrical Works" },
+                            { img: plumbingImg, title: "Plumbing Systems" },
+                            { img: hvacImg, title: "HVAC Systems" },
+                            { img: fireFightingImg, title: "Fire Fighting Systems" }
+                          ].map((mep, index) => (
+                            <div key={index} className="item-card px-2">
+                              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <img
+                                  src={mep.img}
+                                  alt={mep.title}
+                                  className="w-full h-64 object-cover"
+                                  loading="lazy"
+                                />
+                                <div className="p-4">
+                                  <h3 className="font-semibold text-lg text-primary text-center">{mep.title}</h3>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </Slider>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (svc.id === "automation") {
+                return (
+                  <div key={svc.id}>
+                    {serviceElement}
+                    
+                    {/* Automation Door Systems Gallery */}
+                    <div className="mt-20">
+                      <div className="text-center mb-12">
+                        <h3 className="font-condensed font-bold text-2xl text-primary mb-4">Automation Door Systems</h3>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                          Discover our range of automated entrance solutions for commercial, industrial, and logistics facilities
+                        </p>
+                      </div>
+
+                      <div className="automation-doors-slider">
+                        <Slider
+                          dots={true}
+                          infinite={true}
+                          speed={500}
+                          slidesToShow={3}
+                          slidesToScroll={1}
+                          autoplay={true}
+                          autoplaySpeed={4000}
+                          pauseOnHover={true}
+                          arrows={true}
+                          responsive={[
+                            {
+                              breakpoint: 1024,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                              }
+                            },
+                            {
+                              breakpoint: 768,
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                              }
+                            }
+                          ]}
+                        >
+                          {[
+                            { img: doors5Img, title: "Automatic Sliding Doors" },
+                            { img: doors6Img, title: "Automatic Swing Doors" },
+                            { img: doors7Img, title: "Revolving Doors" },
+                            { img: door8Img, title: "Roller Shutters" },
+                            { img: doors9Img, title: "High-Speed Doors" }
+                          ].map((door, index) => (
+                            <div key={index} className="item-card px-2">
+                              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <img
+                                  src={door.img}
+                                  alt={door.title}
+                                  className="w-full h-64 object-cover"
+                                  loading="lazy"
+                                />
+                                <div className="p-4">
+                                  <h3 className="font-semibold text-lg text-primary text-center">{door.title}</h3>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </Slider>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (svc.id === "elv") {
+                return (
+                  <div key={svc.id}>
+                    {serviceElement}
+                    
+                    {/* ELV Systems Gallery */}
+                    <div className="mt-20">
+                      <div className="text-center mb-12">
+                        <h3 className="font-condensed font-bold text-2xl text-primary mb-4">ELV Systems Gallery</h3>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                          Explore our comprehensive ELV solutions for intelligent building systems and smart infrastructure
+                        </p>
+                      </div>
+
+                      <div className="elv-systems-slider">
+                        <Slider
+                          dots={true}
+                          infinite={true}
+                          speed={500}
+                          slidesToShow={3}
+                          slidesToScroll={1}
+                          autoplay={true}
+                          autoplaySpeed={4000}
+                          pauseOnHover={true}
+                          arrows={true}
+                          responsive={[
+                            {
+                              breakpoint: 1024,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                              }
+                            },
+                            {
+                              breakpoint: 768,
+                              settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                              }
+                            }
+                          ]}
+                        >
+                          {[
+                            { img: bmsImg, title: "Building Management Systems (BMS)" },
+                            { img: accessControlImg, title: "Access Control Systems" },
+                            { img: securityImg, title: "Security & Surveillance" },
+                            { img: lightingControlImg, title: "Lighting Control Systems" },
+                            { img: publicAddressImg, title: "Public Address Systems" },
+                            { img: structuredCableImg, title: "Structured Cable Solutions" },
+                            { img: homeAutomationImg, title: "Home Automation" },
+                            { img: airflowControlImg, title: "Airflow Control Systems" },
+                            { img: rpmsImg, title: "Room Pressure Monitoring Systems" }
+                          ].map((elv, index) => (
+                            <div key={index} className="item-card px-2">
+                              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <img
+                                  src={elv.img}
+                                  alt={elv.title}
+                                  className="w-full h-64 object-cover"
+                                  loading="lazy"
+                                />
+                                <div className="p-4">
+                                  <h3 className="font-semibold text-lg text-primary text-center">{elv.title}</h3>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </Slider>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return serviceElement;
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Trading Products Slider */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-condensed font-bold text-3xl text-primary mb-4">Trading Products</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore our comprehensive range of HVAC and MEP products from leading manufacturers
+            </p>
+          </div>
+
+          <div className="trading-slider">
+            <Slider
+              dots={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={4}
+              slidesToScroll={1}
+              autoplay={true}
+              autoplaySpeed={3000}
+              pauseOnHover={true}
+              arrows={true}
+              responsive={[
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                  }
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+              ]}>
+              {tradingProducts.map((product, index) => (
+                <div key={index} className="item-card px-2">
+                  <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
+                    <div className="p-4">
+                      <h3 className="font-semibold text-lg text-primary text-center">{product.name}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ import bodySlider8 from "@/assets/bodyslider/img8.jpg";
 import heroImage from "@/assets/hero-construction.jpg";
 import mepImg from "@/assets/service-mep.jpg";
 import elvImg from "@/assets/service-elv.jpg";
-import autoImg from "@/assets/service-automation.jpg";
+import autoImg from "@/assets/automation-system-doors-profile.png";
 import fmImg from "@/assets/service-fm.jpg";
 import airportImg from "@/assets/project-airport.jpg";
 import stadiumImg from "@/assets/project-stadium.jpg";
@@ -198,8 +198,8 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal delay={150}>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">
-                Master Qatar W.L.L. brings MEP, ELV, automation, facility management, and workforce delivery together under one disciplined team for high-stakes projects across the GCC.
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl font-bold">
+                Master Qatar W.L.L. & QM Arabia brings MEP, ELV, automation, facility management, and workforce delivery together under one disciplined team for high-stakes projects across the GCC.
               </p>
             </Reveal>
 

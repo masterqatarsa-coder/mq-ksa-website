@@ -26,7 +26,8 @@ interface AboutPageProps {
 
 export default function AboutPage({ embedded = false }: AboutPageProps) {
   return (
-    <div>
+    <div>
+
       {!embedded && (
         <PageHero
         title="About Us"

@@ -85,17 +85,25 @@ export default function CareersPage({ embedded = false }: CareersPageProps) {
                   {
                     icon: Phone,
                     title: "Phone",
-                    lines: ["+966 00 000 0000"],
+                    lines: ["+966 539817923 / 509810613"],
                   },
                   {
                     icon: Mail,
                     title: "Email",
-                    lines: ["mail@qatarmaster.com"],
+                    lines: [
+                      <a
+                        key="email"
+                        href="mailto:mail.masterqatar@gmail.com"
+                        className="text-sm text-foreground font-semibold hover:text-primary"
+                      >
+                        mail.masterqatar@gmail.com
+                      </a>,
+                    ],
                   },
                   {
                     icon: Clock,
                     title: "Working Hours",
-                    lines: ["Sunday – Thursday: 8:00 AM – 6:00 PM"],
+                    lines: ["8AM to 5PM"],
                   },
                 ].map(({ icon: Icon, title, lines }) => (
                   <div key={title} className="flex gap-4 p-4 bg-card rounded-xl border border-border shadow-card">

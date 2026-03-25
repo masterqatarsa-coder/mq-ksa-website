@@ -142,17 +142,23 @@ export default function Footer() {
             <div className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5">
               <h3 className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/76">Contact</h3>
               <div className="mt-5 space-y-4 text-sm text-primary-foreground/92">
-                <div className="flex items-start gap-3">
+                <a href="https://www.google.com/maps/place/Master+Qatar/@21.5015688,39.1832624,459m/data=!3m1!1e3!4m6!3m5!1s0x15c3cfecb435a733:0xeca822ac116fa5d3!8m2!3d21.5014555!4d39.1843368!16s%2Fg%2F11z2t0179j?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="flex items-start gap-3 transition-colors hover:text-gold">
                   <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
                     <MapPin size={15} />
                   </div>
                   <span>Jeddah, Kingdom of Saudi Arabia</span>
-                </div>
-                <a href="tel:+966000000000" className="flex items-center gap-3 transition-colors hover:text-gold">
+                </a>
+                <a href="tel:+966539817923" className="flex items-center gap-3 transition-colors hover:text-gold">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
                     <Phone size={15} />
                   </div>
-                  +966 00 000 0000
+                  +966 539817923
+                </a>
+                <a href="tel:+966509810613" className="flex items-center gap-3 transition-colors hover:text-gold">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">
+                    <Phone size={15} />
+                  </div>
+                  +966 509810613
                 </a>
                 <a href="mailto:mail@qatarmaster.com" className="flex items-center gap-3 transition-colors hover:text-gold">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-gold">

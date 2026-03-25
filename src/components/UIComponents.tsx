@@ -137,13 +137,6 @@ export function PageHero({ title, subtitle, bg, details }: PageHeroProps) {
 
       <div className="container relative z-10 mx-auto px-4">
         <Reveal className="max-w-4xl">
-          <span className="eyebrow-label mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.26em] text-primary-foreground/84">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Saudi Arabia Branch
-          </span>
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold/90">
-            Master Qatar W.L.L.
-          </p>
           <h1 className="mt-4 max-w-3xl font-condensed text-4xl font-black leading-[0.92] text-primary-foreground md:text-6xl lg:text-7xl">
             {title}
           </h1>

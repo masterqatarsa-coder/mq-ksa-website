@@ -178,14 +178,20 @@ export function Navbar() {
               <span className={`hidden lg:inline ${topBarSubtleClasses}`}>Kingdom of Saudi Arabia </span>
             </div>
             <div className={`flex items-center gap-5 ${topBarLeadClasses}`}>
-              <span className="inline-flex items-center gap-2">
+              <a href="https://www.google.com/maps/place/Master+Qatar/@21.5015688,39.1832624,459m/data=!3m1!1e3!4m6!3m5!1s0x15c3cfecb435a733:0xeca822ac116fa5d3!8m2!3d21.5014555!4d39.1843368!16s%2Fg%2F11z2t0179j?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
                 <MapPin size={12} /> Jeddah, Saudi Arabia
-              </span>
-              <a href="tel:+966000000000" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
-                <Phone size={12} /> +966 00 000 0000
               </a>
-              <a href="mailto:mail@qatarmaster.com" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
-                <Mail size={12} /> mail@qatarmaster.com
+              <div className="flex items-center gap-4">
+                <a href="tel:+966539817923" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
+                  <Phone size={12} /> +966 539817923
+                </a>
+                <span className="text-primary-foreground/60">|</span>
+                <a href="tel:+966509810613" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
+                  <Phone size={12} /> +966 509810613
+                </a>
+              </div>
+              <a href="mailto:mail.masterqatar@gmail.com" className="inline-flex items-center gap-2 transition-colors hover:text-gold">
+                <Mail size={12} /> mail.masterqatar@gmail.com
               </a>
             </div>
           </div>
@@ -415,13 +421,13 @@ export function Navbar() {
               </div>
 
               <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                <a href="tel:+966000000000" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
-                  <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Phone</span>
-                  +966 00 000 0000
+                <a href="tel:+966539817923" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
+                  <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Phone 1</span>
+                  +966 539817923
                 </a>
-                <a href="mailto:mail@qatarmaster.com" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
-                  <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Email</span>
-                  mail@qatarmaster.com
+                <a href="tel:+966509810613" className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${utilityCardClasses}`}>
+                  <span className={`mb-1 block text-[11px] font-semibold uppercase tracking-[0.22em] ${utilityLabelClasses}`}>Phone 2</span>
+                  +966 509810613
                 </a>
               </div>
 

@@ -1,5 +1,16 @@
 import { PageHero, SectionHeading } from "@/components/UIComponents";
 import { Award, CheckCircle, Shield } from "lucide-react";
+import cert1Img from "../assets/certificate/certificate-1.jpg";
+import cert2Img from "../assets/certificate/certificate-2.jpg";
+import cert3Img from "../assets/certificate/certificate-3.jpg";
+import cert4Img from "../assets/certificate/certificate-4.jpg";
+
+const certificateImages = [
+  { img: cert1Img, alt: "Certificate 1" },
+  { img: cert2Img, alt: "Certificate 2" },
+  { img: cert3Img, alt: "Certificate 3" },
+  { img: cert4Img, alt: "Certificate 4" },
+];
 
 const certifications = [
   {
@@ -55,7 +66,8 @@ interface CertificationsPageProps {
 
 export default function CertificationsPage({ embedded = false }: CertificationsPageProps) {
   return (
-    <div>
+    <div>
+
       {!embedded && (
         <PageHero
         title="Certifications"
@@ -147,6 +159,34 @@ export default function CertificationsPage({ embedded = false }: CertificationsP
                 </div>
                 <h4 className="font-condensed font-bold text-lg text-foreground mb-2">{award.title}</h4>
                 <p className="text-xs text-muted-foreground">{award.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates Gallery */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            label="Our Certificates"
+            title="Official Certifications"
+            subtitle="View our official certificates and accreditations."
+            center
+          />
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {certificateImages.map((cert, index) => (
+              <div
+                key={index}
+                className="bg-card rounded-xl overflow-hidden shadow-card hover-lift border border-border"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cert.img}
+                    alt={cert.alt}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>
